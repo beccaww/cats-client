@@ -7,6 +7,7 @@ const navbar = props => (
         <nav className="navbar_navigation">
             <div></div>
             <div className="navbar_logo"><a href="/">THE LOGO</a></div>
+            <div className="spacer"></div>
             <div className="navbar_navitems">
                 <ul>
                     <li><a href= "/">Sign in</a></li>

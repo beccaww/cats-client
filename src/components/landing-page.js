@@ -15,11 +15,28 @@ export function LandingPage(props) {
     return (
         <div className="home">
              <NavbarHomePage />
-            <h2>Welcome to Cat App</h2>
+            <h2>Welcome to the Cat App</h2>
             <main style={{marginTop: '64px'}}>
-                <p>This is page content.</p>
-                <LoginForm />
-                <Link to="/register">Register</Link>
+                <div>
+                    <h3>View pictures of Cats</h3>
+                    <p>[<em>placeholder for picture of cat</em>]</p>
+                    <p>Cats! Cats! Cats! lets you view hundreds of pictures of cats straight from the Cat API and users like you.</p>
+                </div>
+                <div>
+                    <h3>Upload Pictures of Cats</h3>
+                    <p>[<em>placeholder for picture of cat</em>]</p>
+                    <p>Upload your own pictures of cats; cats you own, cats your friends own, cats you find on the street, any picture of a cat!</p>
+                </div>
+                <div>
+                    <h3>Rate the Cats</h3>
+                    <p>[<em>placeholder for picture of cat</em>]</p>
+                    <p>Rate the pictures of cats.</p>
+                </div>
+                <div>
+                    <h3>Start Now!</h3>
+                    <LoginForm />
+                    <Link to="/register">Register</Link>
+                </div>
             </main>
         </div>
     );

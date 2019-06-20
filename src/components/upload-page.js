@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './upload-page.css'
-//import Upload from './upload/Upload'
+import Upload from './upload'
 
 class UploadPage extends Component {
   render() {

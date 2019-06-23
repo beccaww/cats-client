@@ -1,63 +1,89 @@
-import algoliasearch from 'algoliasearch/lite';
-import React, { Component } from 'react';
-import {
-  InstantSearch,
-  Hits,
-  SearchBox,
-  Pagination,
-  Highlight,
-  ClearRefinements,
-  RefinementList,
-  Configure,
-} from 'react-instantsearch-dom';
-import PropTypes from 'prop-types';
-import './search-page.css';
+import React from 'react';
 
-const searchClient = algoliasearch(
-  'B1G2GM9NG0',
-  'aadef574be1f9252bb48d4ea09b5cfe5'
-);
+export default class Search extends React.Component {
+  constructor(props) {
+    super(props);
 
-class Search extends Component {
+    this.state = {
+      index: null,
+      value: '',
+      lines: [],
+      results: [],
+    };
+  }
   render() {
+    const { results, value } = this.state;
+
     return (
-      <div className="ais-InstantSearch">
-        <h1>React InstantSearch e-commerce demo</h1>
-        <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
-          <div className="left-panel">
-            <ClearRefinements />
-            <h2>Brands</h2>
-            <RefinementList attribute="brand" />
-            <Configure hitsPerPage={8} />
-          </div>
-          <div className="right-panel">
-            <SearchBox />
-            <Hits hitComponent={Hit} />
-            <Pagination />
-          </div>
-        </InstantSearch>
+      <div className="app-container">
+        <div className="search-container">
+          <label>Search Cats: </label>
+          <input
+            type="text"
+            value={value}
+            onChange={e => this.onChange(e)} />
+        </div>
+        <div className="results-container">
+          <Results results={results} />
+        </div>
       </div>
     );
   }
-}
+  onChange({ target: { value } }) {
+    const { index, lines } = this.state;
 
-function Hit(props) {
-  return (
-    <div>
-      <img src={props.hit.image} align="left" alt={props.hit.name} />
-      <div className="hit-name">
-        <Highlight attribute="name" hit={props.hit} />
-      </div>
-      <div className="hit-description">
-        <Highlight attribute="description" hit={props.hit} />
-      </div>
-      <div className="hit-price">${props.hit.price}</div>
-    </div>
-  );
-}
+    // Set captured value to input
+    this.setState(() => ({ value }));
 
-Hit.propTypes = {
-  hit: PropTypes.object.isRequired,
+    // Search against lines and index if they exist
+    if(lines && index) {
+      return this.setState(() => ({
+        results: this.search(lines, index, value),
+      }));
+    }
+
+    // If the index doesn't exist, it has to be set it up.
+    // You could show loading indicator here as loading might
+    // take a while depending on the size of the index.
+    loadIndex().then(({ index, lines }) => {
+      // Search against the index now.
+      this.setState(() => ({
+        index,
+        lines,
+        results: this.search(lines, index, value),
+      }));
+    }).catch(err => console.error(err));
+  }
+  search(lines, index, query) {
+    // Search against index and match README lines.
+    return index.search(query.trim()).map(
+      match => lines[match.ref],
+    );
+  }
 };
 
-export default Search;
+const Results = ({results}) => {
+  if(results.length) {
+    return (<ul>{
+      results.map((result, i) => <li key={i}>{result}</li>)
+    }</ul>);
+  }
+  return <span>No results</span>;
+};
+
+function loadIndex() {
+  // Here's the magic. Set up `import` to tell Webpack
+  // to split here and load our search index dynamically.
+  //
+  // Note that you will need to shim Promise.all for
+  // older browsers and Internet Explorer!
+  return Promise.all([
+    import('lunr'),
+    //import('../search_index.json')
+  ]).then(([{ Index }, { index, lines }]) => {
+    return {
+      index: Index.load(index),
+      lines,
+    };
+  });
+}

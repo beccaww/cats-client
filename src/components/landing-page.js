@@ -45,7 +45,7 @@ export function LandingPage(props) {
                     <LoginForm />
                     <Link to="/register">Register</Link>
                     <Link to="/upload">Upload</Link>
-                    <Link to="/search">Search</Link>
+                    <Link to="/search-page">Search</Link>
                 </div>
             </main>
         </div>

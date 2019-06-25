@@ -8,3 +8,16 @@
 .header {
     text-align: center;
 }
+
+.homepage-scroll-container {
+	position: absolute;
+	width: 100px;  
+	top: 550px; 
+	left: 50%;  
+	margin-left: -50px;
+	text-align: center; 
+}
+
+.homepage-scroll-arrow {
+	width: 50px; 
+}

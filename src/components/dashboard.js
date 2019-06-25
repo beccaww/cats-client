@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
+import Toolbar from './navbar'; 
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -11,6 +12,7 @@ export class Dashboard extends React.Component {
     render() {
         return (
             <div className="dashboard">
+                <Toolbar />
                 <div className="dashboard-username">
                     Username: {this.props.username}
                 </div>

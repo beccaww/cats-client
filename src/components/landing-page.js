@@ -19,9 +19,13 @@ export function LandingPage(props) {
              <NavbarHomePage />
             <h2 className="header">Welcome to the Cat App</h2>
             <main style={{marginTop: '64px'}}>
-                <div className="homepage-scroll-container">
-				    <img className="homepage-scroll-arrow" role="presentation" src="assets/images/scroll-arrow.png" />
-			    </div>
+                <div className="landingpage-container">
+                    <div className="homepage-scroll-container"></div>
+                    <div className="landingpage-details-container">
+				        <h1 className="welcome-header">CATS</h1>
+				        <h2>welcome to the cat app</h2>
+			        </div>
+                </div>
                 <div className="container">
                     <header>
                         <h3 className="header">View pictures of Cats</h3>

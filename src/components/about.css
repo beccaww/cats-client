@@ -1,0 +1,57 @@
+
+
+.about-page {
+  height: 100vh;
+  min-height: 700px;  
+  background-color: purple; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.about-header-container {
+	text-align: center;
+}
+
+.about-cards-container {
+	width: 90%; 
+	display: flex; 
+	justify-content: space-around; 
+}
+
+.about-icon {
+	width: 70px;
+	margin: 30px;   
+}
+
+.about-card {
+	box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+	color: white; 
+	width: 30%; 
+	height: 350px; 
+	text-align: center;
+	padding: 10px; 
+}
+
+.cards-line {
+	margin: 1em 0; 
+}
+
+.short-line {
+  display: inline-block;
+  border-width: 0;
+  height: 2px;
+  margin: 2em 0;
+  width: 50px; 
+  background-color: white;
+}
+
+.enter-app-link {
+  color: white;
+  font-size: 16px;
+  text-decoration: underline;
+  padding-top: 50px;
+  cursor: pointer;
+}
+

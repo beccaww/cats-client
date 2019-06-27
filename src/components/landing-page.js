@@ -18,7 +18,7 @@ export function LandingPage(props) {
     return (
         <div className="home">
              <NavbarHomePage />
-            <h2 className="header">Welcome to the Cat App</h2>
+            {/* <h2 className="header">Welcome to the Cat App</h2> */}
             {/* <main style={{marginTop: '64px'}}> */}
             <main>
                 <div className="landingpage-container">

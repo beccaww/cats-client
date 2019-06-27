@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import Toolbar from './navbar'; 
+import './dashboard.css';
+import {Link, Redirect} from 'react-router-dom';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -11,14 +13,21 @@ export class Dashboard extends React.Component {
 
     render() {
         return (
+            
             <div className="dashboard">
                 <Toolbar />
-                <div className="dashboard-username">
-                    Username: {this.props.username}
+                <div style={{marginTop: '64px'}} className="dashboard-welcome">
+                    Welcome {this.props.username}
+                    <div style={{marginTop: '64px'}} className="button one">
+                        <Link to="/upload">Upload</Link>
+                    </div>
+                    <div className="button two">
+                        <Link to="/search-page">Search</Link>
+                    </div>
                 </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
+                {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
                 <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
+                    {/* Protected data: {this.props.protectedData} */}
                 </div>
             </div>
         );

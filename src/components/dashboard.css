@@ -1,0 +1,10 @@
+.dashboard-welcome {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    height: 350px; 
+
+}

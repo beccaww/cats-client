@@ -1,89 +1,43 @@
 import React from 'react';
+import SearchBar from './searchbar';
+import cat from '../api/cat';
 
-export default class Search extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      index: null,
-      value: '',
-      lines: [],
-      results: [],
+class Search extends React.Component {
+    state = {
+        cats: [],
+        selectedCat: null
+    }
+    handleSubmit = async (termFromSearchBar) => {
+        const response = await cat.get('/search', {
+            params: {
+                q: termFromSearchBar
+            }
+        })
+        this.setState({
+            cats: response.data.items
+        })
     };
-  }
-  render() {
-    const { results, value } = this.state;
-
-    return (
-      <div className="app-container">
-        <div className="search-container">
-          <label>Search Cats: </label>
-          <input
-            type="text"
-            value={value}
-            onChange={e => this.onChange(e)} />
-        </div>
-        <div className="results-container">
-          <Results results={results} />
-        </div>
-      </div>
-    );
-  }
-  onChange({ target: { value } }) {
-    const { index, lines } = this.state;
-
-    // Set captured value to input
-    this.setState(() => ({ value }));
-
-    // Search against lines and index if they exist
-    if(lines && index) {
-      return this.setState(() => ({
-        results: this.search(lines, index, value),
-      }));
+    handleCatSelect = (catImage) => {
+        this.setState({selectedCat: catImage})
     }
 
-    // If the index doesn't exist, it has to be set it up.
-    // You could show loading indicator here as loading might
-    // take a while depending on the size of the index.
-    loadIndex().then(({ index, lines }) => {
-      // Search against the index now.
-      this.setState(() => ({
-        index,
-        lines,
-        results: this.search(lines, index, value),
-      }));
-    }).catch(err => console.error(err));
-  }
-  search(lines, index, query) {
-    // Search against index and match README lines.
-    return index.search(query.trim()).map(
-      match => lines[match.ref],
-    );
-  }
-};
-
-const Results = ({results}) => {
-  if(results.length) {
-    return (<ul>{
-      results.map((result, i) => <li key={i}>{result}</li>)
-    }</ul>);
-  }
-  return <span>No results</span>;
-};
-
-function loadIndex() {
-  // Here's the magic. Set up `import` to tell Webpack
-  // to split here and load our search index dynamically.
-  //
-  // Note that you will need to shim Promise.all for
-  // older browsers and Internet Explorer!
-  return Promise.all([
-    import('lunr'),
-    //import('../search_index.json')
-  ]).then(([{ Index }, { index, lines }]) => {
-    return {
-      index: Index.load(index),
-      lines,
-    };
-  });
+    render() {
+        return (
+            <div className='ui container' style={{marginTop: '1em'}}>
+                <SearchBar handleFormSubmit={this.handleSubmit}/>
+                <div className='ui grid'>
+                    <div className="ui row">
+                        <div className="eleven wide column">
+                            {/* <VideoDetail video={this.state.selectedVideo}/> */}
+                        </div>
+                        <div className="five wide column">
+                            {/* <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/> */}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }
+
+export default Search;

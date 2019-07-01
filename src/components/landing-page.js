@@ -7,6 +7,7 @@ import './landing-page.css';
 import NavbarHomePage from './navbar_homepage';
 import LoginForm from './login-form';
 import About from './about-display';
+import  RegistrationForm  from './registration-form';
 
 
 export function LandingPage(props) {
@@ -31,12 +32,18 @@ export function LandingPage(props) {
                <div>
                    <About />
                </div>
-                <div className="container">
-                    <h3 className="header">Start Now!</h3>
-                    <LoginForm />
-                    <Link to="/register">Register</Link>
-                    <Link to="/upload">Upload</Link>
-                    <Link to="/search-page">Search</Link>
+               <div className="containers">
+                    <div className="container">
+                        <h3 className="header">Start Now!</h3>
+                            <RegistrationForm />
+                                {/* <Link to="/register">Register</Link>
+                                <Link to="/upload">Upload</Link>
+                                <Link to="/search-page">Search</Link> */}
+                    </div>
+                    <div className="container 2">
+                        <h3 className="header">Or Login!</h3>
+                            <LoginForm />
+                    </div>
                 </div>
             </main>
         </div>

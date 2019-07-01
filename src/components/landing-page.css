@@ -33,7 +33,7 @@
 	position: absolute; 
 	top: 225px; 
 	left: 0; 
-  right: 0; 
+  	right: 0; 
 }
 
 .welcome-header {
@@ -52,4 +52,16 @@
 
 .homepage-scroll-arrow {
 	width: 50px; 
+}
+
+.containers { 
+	display: flex; 
+	justify-content: space-around; 
+	align-items: center; 
+}
+
+.container, .container2 { 
+	width: 30%; 
+	height: 350px; 
+	padding: 10px; 
 }

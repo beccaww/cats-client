@@ -2,46 +2,23 @@ body {
     font-family: sans-serif;
     padding: 1em;
   }
+
+.searchApp {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+}
+
+  img {
+    width: 100%;
+  }
   
-  .ais-SearchBox {
+  .SearchBox {
     margin: 1em 0;
   }
   
-  .ais-Pagination {
-    margin-top: 1em;
-  }
-  
-  .left-panel {
-    float: left;
-    width: 250px;
-  }
-  
-  .right-panel {
-    margin-left: 260px;
-  }
-  
-  .ais-InstantSearch {
-    max-width: 960px;
-    overflow: hidden;
-    margin: 0 auto;
-  }
-  
-  .ais-Hits-item {
-    margin-bottom: 1em;
-    width: calc(50% - 1rem);
-  }
-  
-  .ais-Hits-item img {
-    margin-right: 1em;
-  }
-  
-  .hit-name {
-    margin-bottom: 0.5em;
-  }
-  
-  .hit-description {
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 0.5em;
-  }
   

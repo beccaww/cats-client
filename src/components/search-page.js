@@ -37,12 +37,12 @@ class Search extends React.Component {
   render() {
     const { img } = this.state;
     return (
-      <div className="App">
+      <div style={{marginTop: '55px'}} className="searchApp">
         <h1>Find a cat</h1>
         <section>
           <form onSubmit={this.onSubmit}>
-            <label for="search-cat">Search cat breeds</label>
-            <input onInput={this.onInput} type="text" name="cat" required />
+            <label for="search-cat">Search by cat breed: </label>
+            <input onInput={this.onInput} className="SearchBox" type="text" name="cat" required />
             <input type="submit" value="Go!" />
           </form>
           { img ? <img src={img} /> : 'No image' }

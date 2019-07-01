@@ -1,43 +1,55 @@
-// import React from 'react';
-// import SearchBar from './searchbar';
-// import cat from '../api/cat';
+import React from "react";
+import "./search-page.css";
 
-// class Search extends React.Component {
-//     state = {
-//         cats: [],
-//         selectedCat: null
-//     }
-//     handleSubmit = async (termFromSearchBar) => {
-//         const response = await cat.get('/search', {
-//             params: {
-//                 q: termFromSearchBar
-//             }
-//         })
-//         this.setState({
-//             cats: response.data.items
-//         })
-//     };
-//     handleCatSelect = (catImage) => {
-//         this.setState({selectedCat: catImage})
-//     }
 
-//     render() {
-//         return (
-//             <div className='ui container' style={{marginTop: '1em'}}>
-//                 <SearchBar handleFormSubmit={this.handleSubmit}/>
-//                 <div className='ui grid'>
-//                     <div className="ui row">
-//                         <div className="eleven wide column">
-//                             {/* <VideoDetail video={this.state.selectedVideo}/> */}
-//                         </div>
-//                         <div className="five wide column">
-//                             {/* <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/> */}
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
+class Search extends React.Component {
 
-// export default Search;
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      img: null
+    };
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.fetch(this.state.input);
+  }
+
+  onInput = (e) => {
+    this.setState({ input: e.target.value });
+  }
+
+  fetch = (breedIds) => {
+    breedIds = breedIds.slice(0, 4);
+    fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedIds}`)
+      .then(res => res.json())
+      .then(json => this.setState({
+        img: json[0].url
+      }))
+      .catch(err => {
+        console.error(err);
+        this.setState({ img: null });
+      });
+  }
+
+  render() {
+    const { img } = this.state;
+    return (
+      <div className="App">
+        <h1>Find a cat</h1>
+        <section>
+          <form onSubmit={this.onSubmit}>
+            <label for="search-cat">Search cat breeds</label>
+            <input onInput={this.onInput} type="text" name="cat" required />
+            <input type="submit" value="Go!" />
+          </form>
+          { img ? <img src={img} /> : 'No image' }
+        </section>
+      </div>
+    );
+  }
+}
+
+export default Search;

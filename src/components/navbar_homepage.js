@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link, Redirect} from 'react-router-dom';
 import './navbar_homepage.css'; 
 
 const Navbar = props => (
@@ -9,8 +9,8 @@ const Navbar = props => (
             <div className="spacer"></div>
             <div className="navbar_navitems">
                 <ul>
-                    <li><a href= "/">Sign in</a></li>
-                    <li><a href= "/">Sign up</a></li>
+                    <li><Link to="/login">Sign up</Link></li>
+                    <li><Link to="/register">Sign up</Link></li>
                 </ul>
             </div>
         </nav>

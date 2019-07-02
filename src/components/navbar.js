@@ -10,7 +10,7 @@ const toolbar = props => (
             <div className="navbar_navitems">
                 <ul>
                     <li><a href= "/">Home</a></li>
-                    <li><a href= "/">Sign out</a></li>
+                    {/* <li><a href= "/"onClick={this.logout()}>Sign out</a></li> */}
                 </ul>
             </div>
         </nav>

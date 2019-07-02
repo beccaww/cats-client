@@ -5,6 +5,7 @@ import {fetchProtectedData} from '../actions/protected-data';
 import Toolbar from './navbar'; 
 import './dashboard.css';
 import {Link, Redirect} from 'react-router-dom';
+import Gallery from './gallery.js'
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -28,6 +29,7 @@ export class Dashboard extends React.Component {
                 {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
                 <div className="dashboard-protected-data">
                     {/* Protected data: {this.props.protectedData} */}
+                    {/* <Gallery /> */}
                 </div>
             </div>
         );

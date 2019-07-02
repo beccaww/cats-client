@@ -9,7 +9,7 @@ const Navbar = props => (
             <div className="spacer"></div>
             <div className="navbar_navitems">
                 <ul>
-                    <li><Link to="/login">Sign up</Link></li>
+                    <li><Link to="/login">Sign in</Link></li>
                     <li><Link to="/register">Sign up</Link></li>
                 </ul>
             </div>

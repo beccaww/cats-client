@@ -16,7 +16,7 @@ export class Dashboard extends React.Component {
         return (
             
             <div className="dashboard">
-                <Toolbar />
+                {/* <Toolbar /> */}
                 <div style={{marginTop: '64px'}} className="dashboard-welcome">
                     Welcome {this.props.username}
                     <div style={{marginTop: '64px'}} className="button one">

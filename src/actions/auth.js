@@ -43,11 +43,8 @@ const storeAuthInfo = (authToken, dispatch) => {
 };
 
 export function logout() {
-    return dispatch => {
-        localStorage.removeItem('jwtToken'); 
-        // setAuthorizationToken(false);
-        // dispatch(setCurrentUser({}));
-    }
+        localStorage.clear();
+        window.location.href = '/';
 }
 
 export const login = (username, password) => dispatch => {

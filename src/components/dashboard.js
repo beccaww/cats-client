@@ -16,7 +16,7 @@ export class Dashboard extends React.Component {
         return (
             
             <div className="dashboard">
-                {/* <Toolbar /> */}
+                <Toolbar />
                 <div style={{marginTop: '64px'}} className="dashboard-welcome">
                     Welcome {this.props.username}
                     <div style={{marginTop: '64px'}} className="button one">
@@ -29,7 +29,7 @@ export class Dashboard extends React.Component {
                 {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
                 <div className="dashboard-protected-data">
                     {/* Protected data: {this.props.protectedData} */}
-                    {/* <Gallery /> */}
+                    <Gallery />
                 </div>
             </div>
         );

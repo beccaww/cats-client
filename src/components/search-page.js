@@ -39,7 +39,7 @@ class Search extends React.Component {
     const { img } = this.state;
     return (
       <div style={{marginTop: '55px'}} className="searchApp">
-        {/* <Toolbar /> */}
+        <Toolbar />
         <h1>Find a cat</h1>
         <section>
           <form onSubmit={this.onSubmit}>

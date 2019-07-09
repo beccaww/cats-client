@@ -14,7 +14,7 @@ export default class Gallery extends Component {
     }
 
     componentDidMount(){
-        get('/images')
+        get('/uploads')
             .then(response => {
                 const images = response.data;
                 this.setState({
@@ -49,12 +49,13 @@ export default class Gallery extends Component {
     render() {
         let photos = this.state.images.map(image => {
             return {
-                src : '/images/' + image.uri,
+                src : '/uploads' + image.uri,
                 width : image.width,
                 height : image.height,
                 id :  image.id
             }
         });
+        if (!this.state.images.length) return null; 
         return (
             <div className="gallery">
                 {this.state.images.length ?

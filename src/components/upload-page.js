@@ -18,8 +18,8 @@ class UploadPage extends Component {
 
   fileUploadHandler = () => {
     const fd = new FormData(); 
-    fd.append('photo', this.state.selectedFile, this.state.selectedFile.name); 
-    axios.post('http://localhost8080/api/images', fd, {
+    fd.append('imageField', this.state.selectedFile, this.state.selectedFile.name); 
+    axios.post('http://localhost:8080/api/images', fd, {
       onUploadProgress: progressEvent => {
         console.log('Upload Progress:' + Math.round(progressEvent.loaded / progressEvent.total* 100) + '%')
       }

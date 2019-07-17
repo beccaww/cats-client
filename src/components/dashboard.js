@@ -23,7 +23,10 @@ export class Dashboard extends React.Component {
                         <Link to="/upload">Upload</Link>
                     </div>
                     <div className="button two">
-                        <Link to="/search-page">Search</Link>
+                        <Link to="/search-page">Search by breed</Link>
+                    </div>
+                    <div className="button three"> 
+                        <Link to="/search-all">Get random cat pic</Link>
                     </div>
                 </div>
                 {/* <div className="dashboard-name">Name: {this.props.name}</div> */}

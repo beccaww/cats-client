@@ -71,9 +71,9 @@ class Upload extends Component {
       });
 
       const formData = new FormData();
-      formData.append("file", file, file.name);
+      formData.append("imageField", file, file.name);
 
-      req.open("POST", "/images/uploads/images");
+      req.open("POST", "http://localhost:8080/api/images");
       req.send(formData);
     });
   }

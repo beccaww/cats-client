@@ -14,7 +14,7 @@ export default class Gallery extends Component {
     }
 
     componentDidMount(){
-        get('/uploads')
+        get('/api/images')
             .then(response => {
                 const images = response.data;
                 this.setState({
@@ -49,7 +49,7 @@ export default class Gallery extends Component {
     render() {
         let photos = this.state.images.map(image => {
             return {
-                src : '/uploads' + image.uri,
+                src : '/api/images' + image.uri,
                 width : image.width,
                 height : image.height,
                 id :  image.id

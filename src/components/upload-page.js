@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './upload-page.css';
-import Upload from './upload';
+// import Upload from './upload';
 import axios from 'axios'; 
 import Toolbar from './navbar';
 

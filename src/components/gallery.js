@@ -14,7 +14,7 @@ export default class Gallery extends Component {
     }
 
     componentDidMount(){
-        get('/api/images')
+        get('http://localhost:8080/api/images/')
             .then(response => {
                 const images = response.data;
                 this.setState({

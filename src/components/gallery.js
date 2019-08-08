@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {get} from 'axios';
+import axios from "axios";
 import ReactGallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
+import { loadAuthToken } from "../local-storage";
 
 export default class Gallery extends Component {
     constructor(props){
@@ -13,15 +14,18 @@ export default class Gallery extends Component {
         };
     }
 
-    componentDidMount(){
-        get('http://localhost:8080/api/images/')
-            .then(response => {
-                const images = response.data;
-                this.setState({
-                    images : images
-                })
-            })
-    }
+    componentDidMount() {
+        console.log("auth");
+        axios({
+          method: "GET",
+          url: "http://localhost:8080/api/images/",
+          headers: { authorization: `Bearer ${loadAuthToken()}` }
+        }).then(response => {
+          this.setState({
+            images: response.data
+          });
+        });
+      }
 
     openLightbox(event, obj) {
         this.setState({

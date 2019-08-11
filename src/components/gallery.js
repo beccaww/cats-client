@@ -21,8 +21,9 @@ export default class Gallery extends Component {
           url: "http://localhost:8080/api/images/",
           headers: { authorization: `Bearer ${loadAuthToken()}` }
         }).then(response => {
+            console.log(response.data); 
           this.setState({
-            images: response.data
+            images: response.data.array
           });
         });
       }

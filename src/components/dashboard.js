@@ -4,6 +4,8 @@ import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import Toolbar from './navbar'; 
 import './dashboard.css';
+import Search from './search-page';
+import Search2 from './search-all';
 import {Link, Redirect} from 'react-router-dom';
 import Gallery from './gallery.js'
 
@@ -19,20 +21,24 @@ export class Dashboard extends React.Component {
                 <Toolbar />
                 <div style={{marginTop: '64px'}} className="dashboard-welcome">
                     Welcome {this.props.username}
-                    <div style={{marginTop: '64px'}} className="button one">
+                    {/* <div style={{marginTop: '64px'}} className="button one">
                         <Link to="/upload">Upload</Link>
-                    </div>
-                    <div className="button two">
+                    </div> */}
+                    {/* <div className="button two">
                         <Link to="/search-page">Search by breed</Link>
                     </div>
                     <div className="button three"> 
                         <Link to="/search-all">Get random cat pic</Link>
-                    </div>
+                    </div> */}
                 </div>
                 {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
+                <div className="search-box">
+                    <Search /> 
+                    {/* <Search2 /> */}
+                </div>
                 <div className="dashboard-protected-data">
                     {/* Protected data: {this.props.protectedData} */}
-                    <Gallery />
+                    {/* <Gallery /> */}
                 </div>
             </div>
         );

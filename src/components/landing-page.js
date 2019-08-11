@@ -25,8 +25,8 @@ export function LandingPage(props) {
                 <div className="landingpage-container">
                     <div className="homepage-scroll-container"></div>
                     <div className="landingpage-details-container">
-				        <h1 className="welcome-header">CATS</h1>
-				        <h2>welcome to the cat app</h2>
+				        <h1 className="welcome-header">Cat Search</h1>
+				        <h2>Welcome</h2>
 			        </div>
                 </div>
                <div>
@@ -44,6 +44,9 @@ export function LandingPage(props) {
                         <h3 className="header">Or Login!</h3>
                             <LoginForm />
                     </div>
+                </div>
+                <div className="space">
+                    
                 </div>
             </main>
         </div>

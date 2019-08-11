@@ -3,7 +3,7 @@
     top: 0;
     left: 0; 
     width: 100%; 
-    background: purple; 
+    background: #257a50; 
     height: 56px; 
 }
 
@@ -39,10 +39,11 @@
 
 .spacer {
     flex: 1; 
+    background-color: #257a50; 
 }
 
 .navbar_navitems a:hover,
 .navbar_navitems a:active {
-    color: orange; 
+    color: #f2bb69; 
 
 }

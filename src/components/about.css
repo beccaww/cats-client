@@ -3,7 +3,7 @@
 .about-page {
   height: 100vh;
   min-height: 700px;  
-  background-color: purple; 
+  background-color: white; 
   display: flex; 
   flex-direction: column;
   justify-content: center; 
@@ -17,7 +17,7 @@
 .about-cards-container {
 	width: 90%; 
 	display: flex; 
-	justify-content: space-around; 
+  justify-content: space-around; 
 }
 
 .about-icon {
@@ -28,10 +28,11 @@
 .about-card {
 	box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 	color: white; 
-	width: 30%; 
+	/* width: 30%;  */
 	height: 350px; 
 	text-align: center;
-	padding: 10px; 
+  padding: 10px; 
+  background-color: #f2bb69; 
 }
 
 .cards-line {

@@ -1,5 +1,6 @@
 .login {
     display: flex;
+    background-color: #edabaf;  
     flex-direction: column;
     flex-wrap: wrap; 
     justify-content: center; 

@@ -29,6 +29,7 @@
 
 .landingpage-details-container {
 	color: white;
+	font-family: 'Beth Ellen', cursive;
 	text-align: center;
 	position: absolute; 
 	top: 225px; 
@@ -58,7 +59,7 @@
 	display: flex; 
 	justify-content: space-around; 
 	align-items: center; 
-	background-color: #257a50;  
+ 
 }
 
 .container, .container2 { 
@@ -72,5 +73,5 @@
 
 .space {
 	height: 64px; 
-	background-color: #257a50; 
+	 
 }

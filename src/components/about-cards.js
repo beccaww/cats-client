@@ -6,7 +6,7 @@ const AboutCards = () => {
 	return (
 		<div className="about-cards-container">
 			<div className="about-card">
-				<img className="about-icon" role="presentation" src="assets/images/review.png" />
+				<img className="about-icon" role="presentation" src={require("../assets/images/cat8.png")} />
 				<h3>View Pictures of Cats</h3>
 				<hr className="short-line cards-line" />
 				<p>The Cats app lets you view hundreds of pictures of cats straight from the Cat API.</p>

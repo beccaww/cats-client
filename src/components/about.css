@@ -26,13 +26,14 @@
 }
 
 .about-card {
-	box-shadow: 0 3px 5px rgba(0,0,0,0.2);
-	color: white; 
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+  font-family: 'Dosis', sans-serif;
+  font-size: 22px; 
+	/* color: white;  */
 	/* width: 30%;  */
 	height: 350px; 
 	text-align: center;
   padding: 10px; 
-  background-color: #f2bb69; 
 }
 
 .cards-line {

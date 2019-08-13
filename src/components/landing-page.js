@@ -34,14 +34,14 @@ export function LandingPage(props) {
                </div>
                <div className="containers">
                     <div className="container">
-                        <h3 className="header">Start Now!</h3>
+                        <h3 className="header">Start Now</h3>
                             <RegistrationForm />
                                 {/* <Link to="/register">Register</Link>
                                 <Link to="/upload">Upload</Link>
                                 <Link to="/search-page">Search</Link> */}
                     </div>
                     <div className="container 2">
-                        <h3 className="header">Or Login!</h3>
+                        <h3 className="header">Login</h3>
                             <LoginForm />
                     </div>
                 </div>

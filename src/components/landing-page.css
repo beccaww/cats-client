@@ -77,3 +77,16 @@
 	height: 64px; 
 	background-color: #75c79e;
 }
+
+button { 
+	padding: 10px;
+    border: none;
+    background-color: #257a50;
+    color: white;
+    /* font-size: 18px; */
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 25px
+}

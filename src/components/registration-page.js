@@ -12,10 +12,10 @@ export function RegistrationPage(props) {
         return <Redirect to="/dashboard" />;
     }
     return (
-        <div className="register">
+        <div style={{marginTop: '64px'}} className="register">
             <h2>Register for Cat App</h2>
             <RegistrationForm />
-            <Link to="/">Login</Link>
+            <Link to="/login">Login</Link>
         </div>
     );
 }

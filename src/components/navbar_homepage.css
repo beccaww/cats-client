@@ -5,6 +5,8 @@
     width: 100%; 
     background: #257a50; 
     height: 56px; 
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px; 
 }
 
 .navbar_navigation {

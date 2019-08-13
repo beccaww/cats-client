@@ -1,6 +1,5 @@
 .login {
-    display: flex;
-    background-color: #edabaf;  
+    display: flex; 
     flex-direction: column;
     flex-wrap: wrap; 
     justify-content: center; 
@@ -8,4 +7,29 @@
     box-shadow: 0 3px 5px rgba(0,0,0,0.2);
     height: 425px; 
     font-family: 'Dosis', sans-serif;
+}
+
+.login-form {
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.login a {
+    color: #257a50;
+    text-decoration: none; 
+    font-size: 1.2rem;
+}
+
+.login a:hover,
+.login a:active {
+    color: #f2bb69; 
+
+}
+
+.login button:hover,
+.login button:active {
+    background-color: #f2bb69;
 }

@@ -17,7 +17,7 @@ class Toolbar extends React.Component {
         return (
             <header className="navbar">
                 <nav className="navbar_navigation">
-                    <div className="navbar_logo"><a href="/">CATS</a></div>
+                    <div className="navbar_logo"><a href="/"><img src={require("../assets/images/cat11.png")}></img></a></div>
                         <div className="spacer"></div>
                         <div className="navbar_navitems">
                             <ul>

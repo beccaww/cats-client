@@ -6,7 +6,8 @@ import Toolbar from './navbar';
 import './dashboard.css';
 import Search from './search-page';
 import Search2 from './search-all';
-import {Link, Redirect} from 'react-router-dom';
+// import {Link, Redirect} from 'react-router-dom';
+// import { HashLink as Link } from 'react-router-hash-link';
 import Gallery from './gallery.js'
 
 export class Dashboard extends React.Component {
@@ -21,6 +22,7 @@ export class Dashboard extends React.Component {
                 <Toolbar />
                 <div style={{marginTop: '64px'}} className="dashboard-welcome">
                     Welcome {this.props.username}
+                    {/* <Link to="home-page#search">Find a cat</Link> */}
                     {/* <div style={{marginTop: '64px'}} className="button one">
                         <Link to="/upload">Upload</Link>
                     </div> */}
@@ -32,7 +34,7 @@ export class Dashboard extends React.Component {
                     </div> */}
                 </div>
                 {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
-                <div className="search-box">
+                <div className="search-box" id="search">
                     <Search /> 
                     {/* <Search2 /> */}
                 </div>

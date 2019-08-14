@@ -6,10 +6,11 @@ import {Route, withRouter} from 'react-router-dom';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
-import LoginPage from './login-page'; 
+import LoginPage from './login-page';
 import UploadPage from './upload-page';
 import Search from './search-page'; 
 import Search2 from './search-all';
+import Breeds from './cat-breeds-page'; 
 import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {
@@ -53,6 +54,7 @@ export class App extends React.Component {
                 <Route exact path="/upload" component={UploadPage} />
                 <Route exact path="/search-page" component={Search} />
                 <Route exact path="/search-all" component={Search2} />
+                <Route exact path="/breeds" component={Breeds} /> 
             </div>
         );
     }

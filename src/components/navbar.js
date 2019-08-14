@@ -22,6 +22,7 @@ class Toolbar extends React.Component {
                         <div className="navbar_navitems">
                             <ul>
                                 <li><a href="/">Home</a></li>
+                                <li><a href="/breeds">Breeds</a></li>
                                 <li><a href="/" onClick={this.logout.bind(this)}>Logout</a></li>
                             </ul>
                         </div>

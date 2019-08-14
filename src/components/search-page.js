@@ -45,7 +45,7 @@ class Search extends React.Component {
           <form onSubmit={this.onSubmit}>
             <label for="search-cat">Search by cat breed: </label>
             <input onInput={this.onInput} className="SearchBox" type="text" name="cat" required />
-            <input type="submit" value="Go!" />
+            <input type="submit" className="SearchButton" value="Go!" />
           </form>
           { img ? <img src={img} /> : 'No image' }
         </section>

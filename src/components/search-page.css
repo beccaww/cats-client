@@ -20,6 +20,23 @@ body {
   
   .SearchBox {
     margin: 1em 0;
+    width: 300px;
+    height: 30px;
+    font-size: 10pt;
+    /* color: #63717f; */
+    padding-left: 25px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
   }
-  
-  
+
+ .SearchButton {
+    height: 30px;
+    font-size: 10pt;
+    border: none; 
+    background: #257a50;
+    color: white; 
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 12px;
+ }

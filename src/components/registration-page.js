@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import RegistrationForm from './registration-form';
 import './registration-page.css';
+import Navbar from './navbar_homepage'
 
 
 export function RegistrationPage(props) {
@@ -12,11 +13,14 @@ export function RegistrationPage(props) {
         return <Redirect to="/dashboard" />;
     }
     return (
-        <div style={{marginTop: '64px'}} className="register">
-            <h2>Register for Cat App</h2>
-            <RegistrationForm />
-            <Link to="/login">Login</Link>
-        </div>
+         <div> 
+             <Navbar />
+            <div style={{marginTop: '64px'}} className="register">
+                <h2>Register for Cat App</h2>
+                <RegistrationForm />
+                <Link to="/login">Login</Link>
+            </div>
+        </div>  
     );
 }
 

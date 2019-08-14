@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import LoginForm from './login-form';
 import './login-page.css';
+import Navbar from './navbar_homepage'; 
 
 
 export function LoginPage(props) {
@@ -12,10 +13,13 @@ export function LoginPage(props) {
         return <Redirect to="/dashboard" />;
     }
     return (
-        <div className="login">
-            <h2>Login for Cat App</h2>
-            <LoginForm />
-            <Link to="/register">Register</Link>
+        <div> 
+            <Navbar />
+            <div className="login">
+                <h2>Login for Cat App</h2>
+                <LoginForm />
+                <Link to="/register">Register</Link>
+            </div>
         </div>
     );
 }

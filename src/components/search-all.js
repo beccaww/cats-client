@@ -37,14 +37,14 @@ class Search2 extends React.Component {
   render() {
     const { img } = this.state;
     return (
-      <div style={{marginTop: '55px'}} className="searchApp">
-        <Toolbar />
-        <h1>Find a cat</h1>
+      <div className="searchApp">
+        {/* <Toolbar /> */}
+        {/* <h1>Find a cat</h1> */}
         <section>
           <form onSubmit={this.onSubmit}>
-            <label for="search-cat">Search cats: </label>
+            {/* <label for="search-cat">Search cats: </label> */}
             {/* <input onInput={this.onInput} className="SearchBox" type="text" name="cat" required /> */}
-            <input type="submit" value="Go!" />
+            <input type="submit" className="SearchButton" value="Feeling Lucky?" />
           </form>
           { img ? <img src={img} /> : 'No image' }
         </section>

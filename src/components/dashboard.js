@@ -35,8 +35,7 @@ export class Dashboard extends React.Component {
                 </div>
                 {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
                 <div className="search-box" id="search">
-                    <Search /> 
-                    {/* <Search2 /> */}
+                    <Search /> <Search2 />
                 </div>
                 <div className="dashboard-protected-data">
                     {/* Protected data: {this.props.protectedData} */}

@@ -10,7 +10,7 @@ import LoginPage from './login-page';
 import UploadPage from './upload-page';
 import Search from './search-page'; 
 import Search2 from './search-all';
-import Breeds from './cat-breeds-page'; 
+import Breeds from './cat-breeds'; 
 import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {

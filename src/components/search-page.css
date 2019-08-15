@@ -24,6 +24,7 @@ body {
     height: 30px;
     font-size: 10pt;
     /* color: #63717f; */
+    border: solid 1px #257a50; 
     padding-left: 25px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;

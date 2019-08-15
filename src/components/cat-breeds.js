@@ -1,56 +1,27 @@
-import React from 'react';
-import Toolbar from './navbar';
-import './cat-breeds.css'; 
+import React, { Component } from 'react';
+import Breedslist from './breedslist'; 
 
-class Breeds extends React.Component {
+class Breeds extends Component {
+    render() {
+        return (
+            <Breedslist breeds={this.state.breeds} />
+        )
+    }
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        input: '',
-        list: null
-      };
-    }
-  
-    onSubmit = (e) => {
-      e.preventDefault();
-      this.fetch(this.state.input);
-    }
-  
-  //   onInput = (e) => {
-  //     this.setState({ input: e.target.value });
-  //   }
-  
-    fetch = () => {
+  state = {
+      breeds: []
+  };
+
+   componentDidMount() {
       fetch(`https://api.thecatapi.com/v1/breeds`)
       .then(res => res.json())
-      .then(json => this.setState({
-        list: json[0].url
-      }))
-      .catch(err => {
-        console.error(err);
-        this.setState({ list: null });
-      });
+      .then((data) => {
+          this.setState({ breeds: data })
+      })
+      .catch(console.log)
   }
-  
-    render() {
-      const { list } = this.state;
-      return (
-        <div style={{marginTop: '55px'}} className="searchApp">
-          <Toolbar />
-          <h1>Find a cat</h1>
-          <section>
-            <form onSubmit={this.onSubmit}>
-              <label for="search-cat">Search cats: </label>
-              {/* <input onInput={this.onInput} className="SearchBox" type="text" name="cat" required /> */}
-              <input type="submit" value="Go!" />
-            </form>
-          </section>
-        </div>
-      );
-    }
-  }
-  
+}
+
   export default Breeds;
 
 

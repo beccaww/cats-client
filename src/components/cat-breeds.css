@@ -1,0 +1,35 @@
+
+.card {
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    font-family: 'Dosis', sans-serif;
+    font-size: 22px; 
+    color: #257a50;
+	height: 400px; 
+	text-align: center;
+    padding: 10px; 
+    background-color: white; 
+}
+
+.card:nth-child(odd) {
+    background-color: #257a50;
+    color: white; 
+  }
+
+.card-name { 
+    font-size: 1.5rem; 
+}
+
+.card-url {
+    text-decoration: none; 
+    font-size: 1.2rem; 
+    color: #1a3025; 
+}
+
+.card-url:hover, 
+.card-url:active {
+    color: #f2bb69; 
+}
+
+.card-alt-name{ 
+    font-size: 1.2rem; 
+}

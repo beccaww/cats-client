@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Breedslist from './breedslist'; 
+import './cat-breeds.css'; 
 
 class Breeds extends Component {
     render() {

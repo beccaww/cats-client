@@ -1,2 +1,2 @@
-web: https://dashboard.heroku.com/apps/fast-reaches-43964
-api: https://dashboard.heroku.com/apps/secure-ravine-30933
+web: bin/boot
+api: npm start
